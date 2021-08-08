@@ -48,10 +48,10 @@ for user in users:
         result='当天填报已结束'
     else:
         result='报送情况：报送失败'
-    print(timeString=+' '+result)
+    print(timeString+' '+result)
     #取得推送公众号个人token,支持‘虾推啥’和server酱（又名‘方糖’）
     token = user['token']
     if token != '':
         requests.get('http://wx.xtuis.cn/' + token + '.send?text='+result)
         requests.get('https://sctapi.ftqq.com/' + token + '.send?title='+result)
-    time.sleep(10)
+    time.sleep(5)
